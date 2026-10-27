@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distribuidora La Jefa | Catálogo</title>
+<meta name="description" content="Catálogo de quesos al mayor de Distribuidora La Jefa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-oscuro:#103835;
+  --verde-claro:#8EC043;
+  --amarillo:#FEC909;
+  --beige:#FBF4E6;
+  --turquesa:#1EAFA2;
+  --linea:#eadfc7;
+  --gris:#4f625d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--beige);color:var(--verde-oscuro);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--turquesa);outline-offset:3px}
+
+/* Encabezado: banda verde + zona amarilla de queso */
+.perfil{--logo-h:130px;--banda:70px}
+.banda{height:var(--banda);background:var(--verde-oscuro)}
+.queso{position:relative;overflow:hidden;background:var(--blanco);border-radius:0 0 32px 32px;padding:calc(var(--logo-h)/2 + 22px) 20px 40px;text-align:center}
+.queso::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("https://res.cloudinary.com/df6vfbjug/image/upload/v1792972459/Queso_image_la_jefa2_vieyb2.jpg") Center/cover no-repeat;
+  opacity:.15;
+  pointer-events:none;
+}
+.hueco{position:absolute;border-radius:50%;background:#fffdf8;box-shadow:inset 6px 8px 0 rgba(176,128,0,.30)}
+.h1{width:130px;height:130px;right:5%;top:-30px}
+.h2{width:56px;height:56px;right:24%;top:54px}
+.h3{width:190px;height:190px;right:-60px;bottom:-30px}
+.h4{width:84px;height:84px;left:-24px;top:40%}
+.h5{width:36px;height:36px;left:18%;bottom:26px}
+.logo-wrap{height:0;display:flex;justify-content:center;align-items:center;position:relative;z-index:3}
+.logo{height:var(--logo-h);max-width:80vw;display:flex;align-items:center;justify-content:center}
+.logo img{height:var(--logo-h);width:auto;max-width:80vw;object-fit:contain}
+.logo-ph{width:min(260px,80vw);height:100%;border:2px dashed var(--verde-claro);background:var(--verde-oscuro);border-radius:20px;display:grid;place-items:center;color:var(--verde-claro);font-weight:500;padding:12px;font-size:.95rem}
+.perfil-in{position:relative;z-index:2;max-width:620px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px}
+.redes{display:flex;gap:14px;justify-content:center}
+.redes a{width:48px;height:48px;border-radius:50%;background:var(--verde-oscuro);color:var(--amarillo);display:grid;place-items:center;transition:background .2s,color .2s,transform .2s}
+.redes a:hover{background:var(--verde-claro);color:var(--verde-oscuro);transform:translateY(-2px)}
+.redes svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.bio{display:flex;flex-direction:column;gap:3px;font-size:0.92rem;font-weight:500}
+.bio p:first-child{font-weight:800;font-size:1.2rem}
+.bio p{max-width:34em}
+.botones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:700;font-size:.95rem;padding:10px 18px;border-radius:999px;background:var(--verde-oscuro);color:var(--beige);transition:background .2s,transform .2s}
+.btn:hover{background:var(--turquesa);transform:translateY(-2px)}
+.btn.destacado{background:var(--verde-claro);color:var(--verde-oscuro)}
+.btn.destacado:hover{background:var(--amarillo)}
+
+/* Productos */
+.titulo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-bottom:22px}
+.titulo h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.5rem,4vw,2rem);line-height:1.1}
+.reloj{font-size:.9rem;font-weight:500;color:var(--gris);background:#fff;border:1px solid var(--linea);padding:6px 14px;border-radius:999px}
+main{max-width:1120px;margin:0 auto;padding:36px 20px 56px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.card{position:relative;background:#fff;border:1px solid var(--linea);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.foto{aspect-ratio:4/3;background:var(--verde-claro);display:grid;place-items:center;font-size:56px;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+.cuerpo{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem;line-height:1.1;letter-spacing:-.01em}
+.desc{color:var(--gris);font-size:.9rem}
+.pie{margin-top:auto;padding-top:14px;display:flex;flex-direction:column;gap:12px}
+.precio{display:inline-block;align-self:flex-start;background:var(--amarillo);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.45rem;line-height:1;padding:7px 14px;border-radius:10px}
+.precio small{font-family:'DM Sans',sans-serif;font-weight:500;font-size:.8rem}
+.pedir{display:block;width:100%;text-align:center;background:var(--verde-oscuro);color:var(--beige);text-decoration:none;font-weight:700;padding:12px 16px;border-radius:14px;transition:background .2s}
+.pedir:hover{background:var(--turquesa)}
+.badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--verde-oscuro);color:var(--amarillo);font-weight:800;font-size:.85rem;padding:6px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(16,56,53,.25)}
+.card.no-disp .foto,.card.no-disp .cuerpo{opacity:.55;filter:saturate(.3)}
+.pedir.off,.pedir.off:hover{background:var(--linea);color:var(--gris);cursor:not-allowed}
+
+footer{background:var(--verde-oscuro);color:var(--beige);text-align:center;padding:34px 20px;font-size:.9rem}
+.foot{max-width:620px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:6px}
+.foot-logo{height:52px;width:auto;max-width:70vw;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:8px}
+.foot-logo.propio{filter:none}
+.foot .rif{font-weight:700;color:var(--amarillo)}
+.foot .copy{opacity:.7;font-size:.8rem;margin-top:8px}
+
+@media(max-width:640px){
+  .perfil{--logo-h:100px;--banda:56px}
+  .queso{padding:calc(var(--logo-h)/2 + 18px) 18px 34px;border-radius:0 0 26px 26px}
+  .h1{width:90px;height:90px}.h3{width:120px;height:120px}.h2{display:none}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  main{padding:26px 14px 44px}
+  .cuerpo{padding:12px 11px 13px;gap:4px}
+  .card h2{font-size:1.1rem}
+  .desc{font-size:.8rem}
+  .precio{font-size:1.15rem;padding:6px 11px}
+  .pedir{padding:10px 6px;font-size:.88rem}
+  .foto{font-size:40px}
+  .btn{font-size:.88rem;padding:9px 14px}
+  .badge{top:8px;left:8px;font-size:.75rem;padding:5px 10px}
+}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="perfil">
+  <div class="banda"></div>
+  <div class="logo-wrap"><div class="logo" id="logo"></div></div>
+  <div class="queso">
+    <span class="hueco h1"></span><span class="hueco h2"></span><span class="hueco h3"></span><span class="hueco h4"></span>
+    <div class="perfil-in">
+      <nav class="redes" id="redes" aria-label="Redes y contacto"></nav>
+      <div class="bio" id="bio"></div>
+      <div class="botones" id="botones"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="titulo">
+    <h1>Productos disponibles</h1>
+    <span class="reloj" id="reloj"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <div class="foot" id="foot"></div>
+</footer>
+
+<script>
+/* ============ EDITA SOLO ESTA SECCIÓN ============ */
+const CONFIG = {
+  nombre: "Distribuidora La Jefa",
+  logoPie: "https://res.cloudinary.com/df6vfbjug/image/upload/v1793122659/Logo_blanco_para_dondo_oscuro_png_ypofpf.png",                                // Logo del pie de página (déjalo vacío para usar el logo de arriba en blanco)
+  rif: "J-507458105",                         // Aparece en el pie de página
+  horario: "Lunes a sábado · 8:00 a. m. a 6:00 p. m.",   // Horario de atención (pie de página)
+  logo: "https://res.cloudinary.com/df6vfbjug/image/upload/v1792684084/Logo_principal_2h_magd6m.png",                                   // Link de Cloudinary del logo (ya incluye el nombre)
+  whatsapp: "584120000000",                   // Con código de país, sin + ni espacios
+  instagram: "https://instagram.com/tu_usuario",
+  tiktok: "https://tiktok.com/@tu_usuario",
+  email: "correo@ejemplo.com",
+  moneda: "$",
+  mostrarReloj: true,                         // true = muestra fecha y hora junto al título; false = lo oculta
+  zonaHoraria: "America/Caracas",
+
+  /* Botones debajo de la descripción. Si dejas "url" vacío, el botón no aparece.
+     En url puedes poner "whatsapp" para que abra tu chat automáticamente.
+     "destacado: true" lo resalta en verde claro. */
+  botones: [
+    { texto:"📍 Ubicación",      url:"https://maps.google.com", destacado:false },
+    { texto:"💬 WhatsApp",       url:"whatsapp",                destacado:true  },
+    { texto:"💳 Formas de pago", url:"",                        destacado:false }
+  ],
+
+  /* Descripción tipo perfil: de 3 a 4 líneas. La primera se resalta en amarillo. */
+  bio: [
+    "🧀 Distribuidora de Quesos al mayor 🧀",
+    "🔝 Calidad y frescura para tu negocio, todos los días.🔝",
+    "Delivery en Toda Caracas 🚚",
+    " 📲 (0412) 969.57.55 - (0414) 388.39.92 📲"
+  ]
+};
+
+const PRODUCTOS = [
+  { nombre:"Queso Prensado", desc:"Pedido mínimo: 1 Pieza (14kg aprox).", precio:"7.70", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1792970942/Queso_Finquero_vjipja.jpg" },
+  { nombre:"Queso Finquero", desc:"Pedido mínimo 1 Pieza (8kg aprox).", precio:"8.50", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1792973116/finq_345_jx3fkh.jpg" },
+  { nombre:"Queso Amarillo", desc:"Pedido mínimo 1 Pieza (3kg aprox).", precio:"9.50", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1792973949/chedar_img2_s_emcfch.jpg" },
+  { nombre:"Queso Mozarella", desc:"Pedido mínimo 1 pieza (3.5kg aprox)", precio:"8.80", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1792973854/mozarella_img_12_o_swbvti.jpg" },
+  { nombre:"Queso Guayanes", desc:"Pedido mínimo 1 Pieza (5kg aprox).", precio:"6.70", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1792975110/guayane_simg2_e_y9a1n2.jpg" },
+  { nombre:"Queso Ahumado", desc:"Pedido mínimo 1 pieza (aprox 1.5kg).", precio:"14.99", unidad:"kg", imagen:"https://res.cloudinary.com/df6vfbjug/image/upload/v1793122431/Queso_ahumado_gjqucu.webp", disponible:false, aviso:"Agotado" },
+  /* DISPONIBILIDAD: disponible:true = normal · disponible:false = tarjeta opaca con etiqueta.
+     "aviso" es el texto de la etiqueta (por ejemplo "Agotado" o "Disponible próximamente").
+  */
+  /* Para agregar otro queso, copia una línea y cambia los datos.
+     "imagen": pega el link de Cloudinary entre comillas. "precio" es el valor y "unidad" lo que se vende (kg, pieza, etc.). */
+];
+/* ================================================= */
+
+const $ = s => document.querySelector(s);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wa = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+document.title = CONFIG.nombre + " | Catálogo";
+
+/* Logo */
+$("#logo").innerHTML = CONFIG.logo
+  ? `<img src="${esc(CONFIG.logo)}" alt="${esc(CONFIG.nombre)}">`
+  : `<div class="logo-ph">Aquí va tu logo (pega el link en CONFIG.logo)</div>`;
+
+/* Redes */
+const ICONOS = {
+  tiktok:'<path d="M14 3v11.5a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.4 2.7 2.1 4.4 5 4.7"/>',
+  instagram:'<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/>',
+  whatsapp:'<path d="M3.5 20.5l1.4-4.4A8.6 8.6 0 1 1 8 19.3z"/><path d="M9.2 8.4c-.3 1 .2 2.5 1.6 3.9s2.9 1.9 3.9 1.6l.9-1.2-1.9-1-.8.7c-.8-.3-1.7-1.2-2-2l.7-.8-1-1.9z"/>',
+  email:'<rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/>'
+};
+const redes = [
+  ["tiktok","TikTok",CONFIG.tiktok],
+  ["instagram","Instagram",CONFIG.instagram],
+  ["whatsapp","WhatsApp",wa(`Hola ${CONFIG.nombre}, quiero información de sus quesos.`)],
+  ["email","Correo electrónico","mailto:"+CONFIG.email]
+];
+$("#redes").innerHTML = redes.filter(r => r[2]).map(([k,n,url]) =>
+  `<a href="${esc(url)}" target="_blank" rel="noopener" aria-label="${n}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONOS[k]}</svg></a>`).join("");
+
+/* Descripción */
+$("#bio").innerHTML = CONFIG.bio.map(l => `<p>${esc(l)}</p>`).join("");
+
+/* Botones */
+$("#botones").innerHTML = CONFIG.botones.filter(b => b.url).map(b => {
+  const url = b.url === "whatsapp" ? wa(`Hola ${CONFIG.nombre}, quiero información de sus quesos.`) : b.url;
+  return `<a class="btn${b.destacado ? " destacado" : ""}" href="${esc(url)}" target="_blank" rel="noopener">${esc(b.texto)}</a>`;
+}).join("");
+
+/* Reloj en tiempo real */
+function reloj(){
+  const f = new Intl.DateTimeFormat("es-VE", {weekday:"long", day:"numeric", month:"long", hour:"numeric", minute:"2-digit", hour12:true, timeZone:CONFIG.zonaHoraria}).format(new Date());
+  $("#reloj").textContent = "🕒 " + f;
+}
+if (CONFIG.mostrarReloj) { reloj(); setInterval(reloj, 15000); } else { $("#reloj").remove(); }
+
+/* Pie de página */
+$("#foot").innerHTML =
+  (CONFIG.logoPie || CONFIG.logo ? `<img class="foot-logo${CONFIG.logoPie ? " propio" : ""}" src="${esc(CONFIG.logoPie || CONFIG.logo)}" alt="${esc(CONFIG.nombre)}">` : "") +
+  (CONFIG.horario ? `<p>🕒 ${esc(CONFIG.horario)}</p>` : "") +
+  (CONFIG.rif ? `<p class="rif">RIF: ${esc(CONFIG.rif)}</p>` : "") +
+  `<p class="copy">© ${new Date().getFullYear()} ${esc(CONFIG.nombre)}</p>`;
+
+/* Productos */
+$("#grid").innerHTML = PRODUCTOS.map(p => {
+  const foto = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy">` : `<span aria-hidden="true">🧀</span>`;
+  const precio = p.precio
+    ? `<span class="precio">${CONFIG.moneda}${esc(p.precio)}${p.unidad ? ` <small>/ ${esc(p.unidad)}</small>` : ""}</span>` : "";
+  const off = p.disponible === false;
+  return `<article class="card${off ? " no-disp" : ""}">
+    ${off ? `<span class="badge">${esc(p.aviso || "Agotado")}</span>` : ""}
+    <div class="foto">${foto}</div>
+    <div class="cuerpo">
+      <h2>${esc(p.nombre)}</h2>
+      ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ""}
+      <div class="pie">${precio}
+        ${off
+          ? `<span class="pedir off" aria-disabled="true">No disponible</span>`
+          : `<a class="pedir" target="_blank" rel="noopener" href="${wa(`Hola, quiero solicitar un pedido de ${p.nombre}.`)}">Solicitar pedido</a>`}
+      </div>
+    </div>
+  </article>`;
+}).join("");
+</script>
+</body>
+</html>
